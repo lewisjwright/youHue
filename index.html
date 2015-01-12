@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>YouHue!</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="normalize.css">
+
+  <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+	<h1 style="text-align: center; font-size: 52pt; font-family: 'Oswald'; font-weight: 300;">Welcome to youHue!</h1>
+
+<div class="content" style="margin-bottom: 50px;">
+  <div class="title">Hello</div>
+  <div class="title">World,</div>
+  <div class="title">Welcome</div>
+  <div class="title">To</div>
+  <div class="title">My</div>
+  <div class="title">Plug-in</div>
+  <div class="title">It's</div>
+  <div class="title">Called</div>
+  <div class="title">youHue!</div>
+</div>
+
+<div class="content">
+  <button class="download"><a href="youHue.js">Download JS file</a></button>
+  <button class="git"><a href="">View this on GitHub</a></button>
+</div>
+
+<div class="main-content">
+  <h2 class="content-title">What does youHue do?</h2>
+    <p class="content-text">youHue is a JQuery plug-in that allows its users to add random colours to elements they decide on their page that change every time the page is loaded. It does this in two ways at this current point in time and these are:</p>
+    <ul>
+      <li>Using randomly generated numbers between 0 &amp; 255 to go into an RGB code to bring back a completely random colour.</li>
+      <li>Using your own colour pallettes for a function to pick from randomly.</li>
+    </ul>
+</div>
+
+<div class="new-part">
+ <p class="content-text">There are options to have both of these methods target either the background of an element like this one:</p>
+  <div class="box">Background</div>
+    <p class="content-text">Or the foreground of the element, like this one:</p>
+  <div class="box2">Foreground</div>
+  <p class="content-text">You will see throughout this demo youHue changing colours of different sections, you will also see that I have tried to make it as easy as possible for the user by not requiring them to mess around with the plug-in code. Everything can be done from your own js file by saying true to the options you want but this can be seen more below!</p>
+</div>
+
+<div class="new-part">
+  <h2 class="content-title">How do you use it?</h2>
+  <p class="content-text">First you need to include the js file into your project.</p>
+  <div class="code">&lt;script src="js/youHue.js"&gt;&lt;/script&gt;</div>
+  <p class="content-text">Once you have included the youHue.js file in your project directory you can get started with using the plugin. To do this you must call upon the plugin in your own script file i.e. script.js, it will look something like this:</p>
+  <div class="code">$(".example").youHue({});</div>
+  <div class="content-text">The code above, left like that will do nothing to your chosen element however, when you start adding options into the curly brackets you will see changes. Lets create some boxes as an example. At the moment they have no colour apart from default CSS colours.</div>
+  <div class="content">
+    <div class="example">Example 1</div>
+    <div class="example">Example 2</div>
+    <div class="example">Example 3</div>
+  </div>
+</div>
+
+<div class="new-part">
+  <h2 class="content-title">Options for Random Colours</h2>
+  <p class="content-text">We will start with looking at the options you have when you want to have completely random colours chosen for your elements. To have just the background of an element change simply say this for your chosen element:</p>
+
+  <div class="code">
+    $(".example1").youHue({
+      backgroundColor: true
+    });
+  </div>
+  <div class="example1" style="width: 300px;">Example 1</div>
+
+  <p class="content-text">For your font colour to be the only colour changed simply make your option:</p>
+  <div class="code">foregroundColor: true</div>
+  <div class="example2" style="width: 300px;">Example 2</div>
+
+  <p class="content-text">If you have multiple elements you wish to be different colours but dont want to give them different classes youHue allows you to do this completely randomly by adding this to your options:</p>
+
+  <div class="code">randomize: true</div>
+  <div class="example3"style="width: 300px;">Example 3</div>
+  <div class="example3" style="width: 300px;">Example 3</div>
+  <div class="example3" style="width: 300px;">Example 3</div>
+
+  <p class="content-text">The example above looks like this in a js file:</p>
+  <div class="code">
+    $(".example3").youHue({
+      backgroundColor: true,
+      foregroundColor: true,
+      randomize: true
+    });
+  </div>
+  <p class="content-text">But they can be changed to be either background or foreground or as you can see both.</p>
+</div>
+
+<div class="new-part">
+  <h2 class="content-title">Now for your own colour pallettes!</h2>
+  <p class="content-text">The processes for this section are slightly different than the section above but that is because the way that it works is slightly different also. The functions of this section pick hex codes from an array and make sure that hex code cant be picked again for the same "box", this is to stop clashes of text with background. The easiest example to show you would be the "Hello World" boxes at the top of this page.</p>
+</div>
+
+  <h2 class="content-title">Your Options</h2>
+  <p class="content-text">First things first for your own colour pallette is to add an array of your colours. For this I will use 3 but you can use as many as you like! To add an array of your own colours it should look like this:</p>
+  <div class="code">
+    $(".myexample").youHue({
+      "colors": ['#000000','#FFFFFF','#CCCCCC'],
+    });
+  </div>
+  <p class="content-text">Make sure to put the word colors in double quotes and each colour within the square brackets in single quotes seperated by a comma, this is because it is something as simple as a missed comma that can make a whole javascript file stop working.</p>
+  <p class="content-text">Once you have your colour array set up and ready you can set whether you want foreground and/or background to be targetted by one colour from your array on each page load or multiple colours to be chosen for multiple elements, as mentioned above. Here are some examples of how that would look:</p>
+
+  <div class="myexample" style="width: 300px;">Example</div>
+  <div class="code">
+    $(".myexample").youHue({
+      "colors": ['#f1c40f','#000','#7F8C8D'],
+      myBackground: true
+    });
+  </div>
+  <div class="myexample2" style="width: 300px;">Example 2</div>
+  <div class="code">
+     $(".myexample2").youHue({
+      "colors": ['#f1c40f','#000','#7F8C8D'],
+      myForeground: true
+    });
+  </div>
+  <div class="myexample3" style="width: 300px;">Example 3</div> <div class="myexample3" style="width: 300px;">Example 3</div> <div class="myexample3" style="width: 300px;">Example 3</div>
+  <div class="code">
+    $(".myexample3").youHue({
+      "colors": ['#f1c40f','#000','#7F8C8D'],
+      myRandom: true
+    });
+  </div>
+
+  <p class="content-text">As you can see on the above example adding "myRandom" to the options it will do both foreground and background by default as opposed to the random colour option above. This default can be overidden by just adding "myBackground" or "myForeground" to the options to be more specific. See below:</p>
+
+  <div class="code">
+    $(".myexample4").youHue({
+      "colors": ['#f1c40f','#000','#7F8C8D'],
+      myRandom: true,
+      myForeground: true
+    });
+  </div>
+
+  <div class="myexample4" style="width: 300px;">Example 4</div> <div class="myexample4" style="width: 300px;">Example 4</div> <div class="myexample4" style="width: 300px;">Example 4</div>
+
+  <h2 class="content-title top"><a href="#">&#8593; Back to top &#8593;</a></h2>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script src="youHue.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
