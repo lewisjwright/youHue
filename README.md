@@ -38,17 +38,17 @@ See Below for an example of what I mean:
 
 ```HTML
 <div class="post">
-  <div class="post-title"><h2>Just Another Post</h2>
+  <div class="post-title"><h2>Just Another Post</h2></div>
     <div class="post-content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-				Aliquam pellentesque neque odio, et posuere quam egestas a. 
-				Nam euismod sed dui eu mattis. Fusce mollis elit euismod magna pharetra blandit.
-				Duis semper leo turpis, vel sollicitudin purus sollicitudin id. Ut in interdum dolor...</p>
-		</div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Aliquam pellentesque neque odio, et posuere quam egestas a. 
+		Nam euismod sed dui eu mattis. Fusce mollis elit euismod magna pharetra blandit.
+		Duis semper leo turpis, vel sollicitudin purus sollicitudin id. Ut in interdum dolor...</p>
+	</div>
 </div>
 
 ```
-To target the element you wanted (in this case the title) you would simply do this in you script file:
+To target the element you want (in this case the title) you would simply do this in your script file:
 ```JAVASCRIPT
 $(".post-title").youHue({
 //This is where you would put your chosen options and colour arrays
