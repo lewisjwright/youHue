@@ -17,7 +17,7 @@ See link below:
 
 ###Install youHue
 
-To get started with youHue you must first download the `youHue.js` file and link it to your project, the file should be named youHue.js
+To get started with youHue you must first download the `youHue.js` file and link it to your project, the file you use should be named youHue.js
 
 Then following the advice above place it underneath your JQuery link before the closing `</body>` tag. The link should look like the one below:
 
