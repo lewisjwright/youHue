@@ -57,10 +57,3 @@
       scrollTop: $('h1').offset().top
     }, 400);
   });
-  
-  $('.title-btn').click(function(){
-    $(".title").youHue({
-  		"colors": ['#000','#FFF','#34459e','#AAA'],
-  		myRandom: true,
-  	});
-  });
